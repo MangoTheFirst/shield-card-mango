@@ -27,7 +27,7 @@ mdiNetflix,
 mdiYoutube,
 mdiMenu,
 mdiRemote,
-mdiHulu,
+mdiKodi,
 mdiPlex,
 } from "https://unpkg.com/@mdi/js@6.4.95/mdi.js?module"
 
@@ -250,7 +250,7 @@ class TVCardServices extends LitElement {
           }
           ${
             this._config.youtube ||
-            this._config.hulu ||
+            this._config.kodi ||
             this._config.prime_video
               ? html`
                   <div class="row">
@@ -265,14 +265,14 @@ class TVCardServices extends LitElement {
                         ></ha-icon-button>
                       `
                     : emptyButton}
-                    ${this._config.hulu ?
+                    ${this._config.kodi ?
                       html`
                         <ha-icon-button
-                          .action="${"hulu"}"
+                          .action="${"kodi"}"
                           @click="${this.handleActionClick}"
-                          icon="mdi:hulu"
-                          .path=${mdiHulu}
-                          title="Hulu"
+                          icon="mdi:kodi"
+                          .path=${mdiKodi}
+                          title="Kodi"
                         ></ha-icon-button>
                       `
                     : emptyButton}
@@ -444,7 +444,7 @@ class TVCardServices extends LitElement {
       "menu",
       "finder",
       "plex",
-      "hulu",
+      "kodi",
     ];
 
     if (
